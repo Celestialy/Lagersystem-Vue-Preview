@@ -1,0 +1,160 @@
+
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/bootstrap-vue/src/index.scss';
+
+@each $color, $value in $theme-colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}
+
+.wrapper {
+  height: 100%;
+  min-height: calc(100vh - 56px);
+  position: relative;
+  float:left;
+  background: #222;
+  overflow: hidden;
+  display: flex;
+
+  .sidebar-wrapper {
+    display: block;
+    width: 50px;
+    transition: width .4s;
+
+    /* Hide everything inside the wrapper when the expanded class isn't there*/
+    &:not(.expanded) * {
+      visibility: hidden;
+    }
+
+    &.expanded {
+      width: 150px; /* Width once expanded */
+    }
+  }
+}
+
+
+.noSelect ::selection {
+  color: none;
+  background: none;
+}
+
+.center-block {
+  margin-left:auto;
+  margin-right:auto;
+  display:block;
+}
+
+.imgThumbnail {
+  height: 50px;
+}
+
+.img-hover:hover {
+  opacity: 0.5;
+}
+
+.item-select {
+  margin: 10px 0 10px 0;  
+  border: 1px solid $white;
+}
+
+.imageSize {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 135px;
+}
+
+.item-select-active {    
+  border: 1px solid $black;
+}
+
+.fileBorder {
+  border: grey 1px dashed;
+}
+
+.file-upload {
+  width: 100%;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.file-upload > input[type=file] {
+    opacity: 0;
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    z-index: 100;
+}
+
+.file-upload > .file {
+    opacity: 0;
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    z-index: 100;
+}
+
+.file-upload > .file-upload-text {
+    position: absolute;
+    width: 100%;
+    height: 20vh;
+    text-align: center;
+    line-height: 5vh;
+}
+
+.file-upload > .file-upload-text > .fileUploadImg {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  height: 30%;
+  margin-top: 5vh;
+}
+
+.verticalLine {
+  position: absolute;
+  background-color: blue;
+  width: 6px;
+  top: 91px;
+  bottom: 0px;
+  left: 50%;
+}
+
+.LoanItemDescription {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.addUserLoanItems {
+  margin-bottom: 15px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px
+}
+
+.NotFound {
+  background-color: white;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  min-height: 100%;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.table {
+  margin-bottom: 5px !important;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100px;
+  object-fit: scale-down;
+  padding: 5px;
+}
+
